@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ELYON AI — Automatiza tu empresa con empleados de Inteligencia Artificial</title>
+<meta name="description" content="ELYON AI diseña, entrena y despliega agentes de inteligencia artificial que atienden clientes, gestionan reservas, venden y automatizan tu empresa 24/7.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ELYON AI">
+<meta property="og:title" content="ELYON AI — Empleados de Inteligencia Artificial para tu empresa">
+<meta property="og:description" content="Agentes de IA que responden, venden, reservan y automatizan tu empresa las 24 horas.">
+<meta property="og:image" content="/assets/images/og-cover.jpg">
+<meta property="og:url" content="https://nexora.ai/">
+<meta property="og:locale" content="es_ES">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ELYON AI — Empleados de Inteligencia Artificial para tu empresa">
+<meta name="twitter:description" content="Agentes de IA que responden, venden, reservan y automatizan tu empresa las 24 horas.">
+<meta name="twitter:image" content="/assets/images/og-cover.jpg">
+
+<link rel="canonical" href="https://nexora.ai/">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ELYON AI",
+  "url": "https://nexora.ai/",
+  "logo": "https://nexora.ai/assets/images/logo.svg",
+  "description": "ELYON AI diseña, entrena y despliega agentes de inteligencia artificial que automatizan empresas.",
+  "sameAs": []
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<!-- ==========================================================================
+     FONDO 3D — montado por three-scene.js sobre este canvas
+     ========================================================================== -->
+<div class="bg-aurora" aria-hidden="true"></div>
+<canvas id="webgl-canvas" aria-hidden="true"></canvas>
+
+<!-- Cursor personalizado — gestionado por cursor.js -->
+<div class="custom-cursor" id="customCursor" aria-hidden="true">
+  <div class="custom-cursor__dot"></div>
+  <div class="custom-cursor__ring"></div>
+</div>
+
+<div class="page">
+
+  <!-- ==========================================================================
+       NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#main" class="navbar__logo" aria-label="ELYON — Inicio">
+        <img class="navbar__logo-img" src="assets/images/elyon-logo.png" alt="ELYON" width="688" height="120" loading="eager">
+      </a>
+
+      <nav class="navbar__links" aria-label="Navegación principal">
+        <a href="#hero" class="navbar__link">Inicio</a>
+        <a href="#soluciones" class="navbar__link">Soluciones</a>
+        <a href="#demo-ia" class="navbar__link">Demo IA</a>
+        <a href="#demo-whatsapp" class="navbar__link">WhatsApp</a>
+        <a href="#casos-detalle" class="navbar__link">Casos</a>
+        <a href="#comparativa" class="navbar__link">Comparativa</a>
+        <a href="#seguridad" class="navbar__link">Seguridad</a>
+        <a href="#precios" class="navbar__link">Precios</a>
+        <a href="#faq" class="navbar__link">FAQ</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#contacto" class="btn btn--ghost btn--sm">Iniciar sesión</a>
+        <a href="#contacto" class="btn btn--primary btn--sm">
+          Solicitar Demo
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="navbar__menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="menuClose" aria-label="Cerrar menú">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#hero" class="mobile-menu__link">Inicio</a>
+    <a href="#soluciones" class="mobile-menu__link">Soluciones</a>
+    <a href="#demo-ia" class="mobile-menu__link">Demo IA</a>
+    <a href="#demo-whatsapp" class="mobile-menu__link">WhatsApp</a>
+    <a href="#casos-detalle" class="mobile-menu__link">Casos</a>
+    <a href="#comparativa" class="mobile-menu__link">Comparativa</a>
+    <a href="#seguridad" class="mobile-menu__link">Seguridad</a>
+    <a href="#precios" class="mobile-menu__link">Precios</a>
+    <a href="#faq" class="mobile-menu__link">FAQ</a>
+    <a href="#contacto" class="btn btn--primary" style="margin-top: 1rem;">Solicitar Demo</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ==========================================================================
+         HERO
+         ========================================================================== -->
+    <section class="hero" id="hero" aria-label="Presentación">
+      <div class="container">
+        <div class="hero__grid">
+
+          <div class="hero__content">
+            <p class="eyebrow" data-reveal>Empleados de Inteligencia Artificial</p>
+
+            <h1 class="heading-xl hero__title" data-reveal data-reveal-delay="1">
+              <span class="line">Automatiza tu empresa</span>
+              <span class="line text-gradient">con empleados de IA.</span>
+            </h1>
+
+            <p class="hero__subtitle" data-reveal data-reveal-delay="2">
+              Diseñamos y entrenamos <strong>agentes de inteligencia artificial</strong> que responden clientes, gestionan reservas, venden, generan documentos y atienden WhatsApp, Instagram y correo electrónico — sin que tu equipo mueva un dedo.
+            </p>
+
+            <div class="hero__actions" data-reveal data-reveal-delay="3">
+              <a href="#contacto" class="btn btn--primary btn--lg">
+                Solicitar Demo gratis
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="#como-funciona" class="btn btn--ghost btn--lg">
+                Ver cómo funciona
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 6l3 2-3 2V6z" fill="currentColor"/></svg>
+              </a>
+            </div>
+
+            <div class="hero__trust" data-reveal data-reveal-delay="4">
+              <div class="hero__trust-item">
+                <svg class="hero__trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Sin permanencia
+              </div>
+              <div class="hero__trust-item">
+                <svg class="hero__trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Implementación rápida
+              </div>
+              <div class="hero__trust-item">
+                <svg class="hero__trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Soporte personalizado
+              </div>
+              <div class="hero__trust-item">
+                <svg class="hero__trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                IA disponible 24/7
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__visual" data-reveal data-reveal-delay="2" aria-hidden="true">
+            <div class="hero__visual-glow"></div>
+
+            <!-- Panel principal: conversación del agente IA -->
+            <div class="float-dash float-dash--main">
+              <div class="float-dash__header">
+                <div class="float-dash__title">
+                  <span class="float-dash__status-dot"></span>
+                  Agente IA · Recepción
+                </div>
+                <span class="float-dash__badge">En vivo</span>
+              </div>
+
+              <div class="chat-msg chat-msg--in">
+                <div class="chat-msg__bubble">Hola, ¿tenéis disponibilidad para mañana por la tarde?</div>
+                <span class="chat-msg__time">14:02</span>
+              </div>
+              <div class="chat-msg chat-msg--out">
+                <div class="chat-msg__bubble">Sí, tengo hueco a las 17:30 o a las 19:00. ¿Cuál prefieres?</div>
+                <span class="chat-msg__time">14:02</span>
+              </div>
+              <div class="chat-msg chat-msg--in">
+                <div class="chat-msg__bubble">A las 17:30, perfecto</div>
+                <span class="chat-msg__time">14:03</span>
+              </div>
+            </div>
+
+            <!-- Tarjeta: métrica de respuesta -->
+            <div class="float-dash float-dash--metric">
+              <p class="float-dash__metric-label">Velocidad de respuesta</p>
+              <p class="float-dash__metric-value text-gradient">+90%</p>
+              <div class="float-dash__sparkline" aria-hidden="true">
+                <span style="height:30%"></span><span style="height:45%"></span><span style="height:38%"></span>
+                <span style="height:60%"></span><span style="height:52%"></span><span style="height:78%"></span>
+                <span style="height:68%"></span><span style="height:92%"></span><span style="height:84%"></span>
+                <span style="height:100%"></span>
+              </div>
+            </div>
+
+            <!-- Tarjeta: flujo de automatización activo -->
+            <div class="float-dash float-dash--flow">
+              <div class="flow-row">
+                <span class="flow-row__icon">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3.5L13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Reserva confirmada
+              </div>
+              <div class="flow-row">
+                <span class="flow-row__icon">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3.5L13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Recordatorio programado
+              </div>
+              <div class="flow-row">
+                <span class="flow-row__icon">
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h12M9 3.5L13.5 8 9 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                CRM actualizado
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         VÍDEO DEMOSTRATIVO
+         Para poner tu vídeo real, elige UNA opción dentro de .video-frame:
+
+         a) Archivo MP4 propio:
+            <video src="assets/videos/demo.mp4" poster="assets/images/video-poster.jpg"
+                   controls playsinline preload="none"></video>
+
+         b) YouTube / Vimeo:
+            <iframe src="https://www.youtube.com/embed/TU_ID" title="Demo ELYON"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                    allowfullscreen loading="lazy"></iframe>
+
+         Al añadir cualquiera de las dos, borra el bloque .video-placeholder.
+         ========================================================================== -->
+    <section class="video-demo" aria-label="Vídeo demostrativo">
+      <div class="container">
+        <div class="section-head section-head--center" style="margin-bottom: var(--space-6);">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Vídeo · 45s</p>
+          <h2 class="heading-lg" data-reveal data-reveal-delay="1">Mira a un agente ELYON en acción.</h2>
+        </div>
+
+        <div class="video-frame" data-reveal data-reveal-delay="1">
+          <!-- Sustituye este placeholder por tu <video> o <iframe> (ver comentario arriba) -->
+          <div class="video-placeholder">
+            <div class="video-placeholder__glow"></div>
+            <button class="video-play" aria-label="Reproducir vídeo demostrativo" type="button">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"/></svg>
+            </button>
+            <p class="video-placeholder__label">45 segundos: del primer mensaje del cliente a la cita reservada y guardada en el CRM.</p>
+            <div class="video-placeholder__steps">
+              <span class="video-chip">Cliente escribe</span>
+              <span class="video-chip">IA responde</span>
+              <span class="video-chip">Reserva cita</span>
+              <span class="video-chip">Recordatorio</span>
+              <span class="video-chip">Guarda en CRM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOGOS — banda de confianza, scroll infinito
+         ========================================================================== -->
+    <section class="logos" aria-label="Sectores que confían en ELYON">
+      <div class="container">
+        <p class="logos__label" data-reveal>Sectores que ya trabajan con agentes ELYON</p>
+      </div>
+      <div class="logos__track-wrapper">
+        <div class="logos__track" aria-hidden="true">
+          <span class="logos__item">Restaurantes</span>
+          <span class="logos__item">Clínicas</span>
+          <span class="logos__item">Inmobiliarias</span>
+          <span class="logos__item">Abogados</span>
+          <span class="logos__item">Gimnasios</span>
+          <span class="logos__item">Academias</span>
+          <span class="logos__item">Hoteles</span>
+          <span class="logos__item">E-commerce</span>
+          <span class="logos__item">Constructoras</span>
+          <span class="logos__item">Agencias</span>
+          <!-- Duplicado exacto para loop continuo sin salto -->
+          <span class="logos__item">Restaurantes</span>
+          <span class="logos__item">Clínicas</span>
+          <span class="logos__item">Inmobiliarias</span>
+          <span class="logos__item">Abogados</span>
+          <span class="logos__item">Gimnasios</span>
+          <span class="logos__item">Academias</span>
+          <span class="logos__item">Hoteles</span>
+          <span class="logos__item">E-commerce</span>
+          <span class="logos__item">Constructoras</span>
+          <span class="logos__item">Agencias</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         EL PROBLEMA
+         ========================================================================== -->
+    <section id="problema" aria-labelledby="problema-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>El problema</p>
+          <h2 id="problema-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Tu equipo está perdiendo clientes<br class="hide-mobile"> mientras lee esto.
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-4); margin-inline:auto;" data-reveal data-reveal-delay="2">
+            Cada minuto sin respuesta es una venta que se va a la competencia. Esto es lo que ocurre todos los días en empresas que aún lo gestionan todo a mano.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card" data-reveal data-reveal-delay="1">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Pierdes clientes</h3>
+            <p class="body-base">Sin respuesta inmediata, el cliente compra en la empresa que sí contestó primero.</p>
+          </article>
+
+          <article class="problem-card" data-reveal data-reveal-delay="2">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Respondes tarde</h3>
+            <p class="body-base">Entre reuniones y tareas, los mensajes se acumulan y la respuesta llega horas después.</p>
+          </article>
+
+          <article class="problem-card" data-reveal data-reveal-delay="3">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V9a2 2 0 012-2h3l2-3h2l2 3h3a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="4" y1="20" x2="20" y2="6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Olvidas seguimientos</h3>
+            <p class="body-base">Leads calientes se enfrían porque nadie volvió a escribirles a tiempo.</p>
+          </article>
+
+          <article class="problem-card" data-reveal data-reveal-delay="4">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 9.5h17M8 3v3.4M16 3v3.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Reservas manuales</h3>
+            <p class="body-base">Agendas en papel o en chats que generan errores, huecos vacíos y dobles citas.</p>
+          </article>
+
+          <article class="problem-card" data-reveal data-reveal-delay="5">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 13.5l2.7 1.1a1 1 0 01.6 1.2l-.7 2.4a1 1 0 01-1.1.7C10.8 18 6 13.2 5.1 7l-.1-.7a1 1 0 01.7-1.1l2.4-.7a1 1 0 011.2.6l1.1 2.7a1 1 0 01-.3 1.1L8.6 10.4a9 9 0 005 5l1.5-1.6a1 1 0 011.1-.3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Llamadas perdidas</h3>
+            <p class="body-base">Cada llamada sin contestar es un cliente que probablemente no vuelva a intentarlo.</p>
+          </article>
+
+          <article class="problem-card" data-reveal data-reveal-delay="6">
+            <span class="problem-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.4"/><path d="M5 20c.7-3.6 3.6-6 7-6s6.3 2.4 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <h3 class="heading-sm">Equipo en tareas repetitivas</h3>
+            <p class="body-base">Personas con talento dedicando horas a responder lo mismo, una y otra vez.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         LA SOLUCIÓN — Bento grid
+         ========================================================================== -->
+    <section id="soluciones" aria-labelledby="soluciones-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>La solución</p>
+          <h2 id="soluciones-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Un agente de IA<br>para cada parte de tu negocio.
+          </h2>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-card--lg" data-reveal data-reveal-delay="1">
+            <div class="bento-card__icon bento-card__icon--violet">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 6.6a2.6 2.6 0 012.6-2.6h11.8a2.6 2.6 0 012.6 2.6v8.3a2.6 2.6 0 01-2.6 2.6H10l-4.3 3.4v-3.4H6.1a2.6 2.6 0 01-2.6-2.6V6.6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Agente IA para WhatsApp</h3>
+            <p class="body-base">Responde, agenda y vende en WhatsApp Business con tu tono de marca, las 24 horas.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="2">
+            <div class="bento-card__icon bento-card__icon--cyan">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 8.3l8.5 5.7 8.5-5.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <h3 class="heading-sm">Agente IA para Email</h3>
+            <p class="body-base">Clasifica, responde y deriva correos sin que nada se quede sin leer.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="3">
+            <div class="bento-card__icon bento-card__icon--violet">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15.5 13.5l2.7 1.1a1 1 0 01.6 1.2l-.7 2.4a1 1 0 01-1.1.7C10.8 18 6 13.2 5.1 7l-.1-.7a1 1 0 01.7-1.1l2.4-.7a1 1 0 011.2.6l1.1 2.7a1 1 0 01-.3 1.1L8.6 10.4a9 9 0 005 5l1.5-1.6a1 1 0 011.1-.3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Agente IA para llamadas</h3>
+            <p class="body-base">Voz natural que atiende, informa y agenda citas por teléfono.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="4">
+            <div class="bento-card__icon bento-card__icon--cyan">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.4"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.4"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.4"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <h3 class="heading-sm">Agente IA para Instagram</h3>
+            <p class="body-base">Gestiona DMs y comentarios, cualifica leads y los pasa a tu equipo cuando hace falta.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="5">
+            <div class="bento-card__icon bento-card__icon--violet">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M3.5 9.5h17M8 3v3.4M16 3v3.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Reservas automáticas</h3>
+            <p class="body-base">Tu agenda se llena sola, sin huecos vacíos ni dobles reservas.</p>
+          </article>
+
+          <article class="bento-card bento-card--lg" data-reveal data-reveal-delay="6">
+            <div class="bento-card__icon bento-card__icon--cyan">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V6a1.4 1.4 0 011.4-1.4h7.2L17 9v10a1.4 1.4 0 01-1.4 1.4H5.4A1.4 1.4 0 014 19z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12.6 4.6V9H17" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Documentos inteligentes</h3>
+            <p class="body-base">Presupuestos, contratos y resúmenes generados al instante a partir de la conversación.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="1">
+            <div class="bento-card__icon bento-card__icon--violet">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Captación de leads</h3>
+            <p class="body-base">Detecta intención de compra y cualifica antes de pasar el contacto a ventas.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="2">
+            <div class="bento-card__icon bento-card__icon--cyan">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4v16M5 4h11l-2.2 4L16 12H5" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Recordatorios</h3>
+            <p class="body-base">Avisos automáticos que reducen las ausencias a citas casi a cero.</p>
+          </article>
+
+          <article class="bento-card" data-reveal data-reveal-delay="3">
+            <div class="bento-card__icon bento-card__icon--violet">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19h16M7 19V10M12 19V5M17 19v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="heading-sm">Informes automáticos</h3>
+            <p class="body-base">Tu rendimiento, cada semana, sin que nadie tenga que montar una hoja de cálculo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CÓMO FUNCIONA — timeline horizontal, animado con GSAP/ScrollTrigger
+         ========================================================================== -->
+    <section id="como-funciona" aria-labelledby="como-funciona-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Cómo funciona</p>
+          <h2 id="como-funciona-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            De la primera llamada<br class="hide-mobile">a tu agente trabajando.
+          </h2>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" aria-hidden="true">
+            <div class="timeline__line-fill" id="timelineLineFill"></div>
+          </div>
+
+          <ol class="timeline__steps">
+            <li class="timeline__step" data-reveal>
+              <span class="timeline__index">01</span>
+              <span class="timeline__dot"></span>
+              <h3 class="heading-sm">Analizamos tu empresa</h3>
+              <p class="body-base">Estudiamos tus procesos, tono y canales para saber exactamente qué automatizar primero.</p>
+            </li>
+            <li class="timeline__step" data-reveal data-reveal-delay="1">
+              <span class="timeline__index">02</span>
+              <span class="timeline__dot"></span>
+              <h3 class="heading-sm">Diseñamos tu IA</h3>
+              <p class="body-base">Definimos personalidad, flujo de conversación y reglas de negocio del agente.</p>
+            </li>
+            <li class="timeline__step" data-reveal data-reveal-delay="2">
+              <span class="timeline__index">03</span>
+              <span class="timeline__dot"></span>
+              <h3 class="heading-sm">Entrenamos el agente</h3>
+              <p class="body-base">Lo alimentamos con tu información real: precios, horarios, servicios y preguntas frecuentes.</p>
+            </li>
+            <li class="timeline__step" data-reveal data-reveal-delay="3">
+              <span class="timeline__index">04</span>
+              <span class="timeline__dot"></span>
+              <h3 class="heading-sm">Lo conectamos</h3>
+              <p class="body-base">Integramos WhatsApp, calendario, CRM y el resto de tus herramientas habituales.</p>
+            </li>
+            <li class="timeline__step" data-reveal data-reveal-delay="4">
+              <span class="timeline__index">05</span>
+              <span class="timeline__dot"></span>
+              <h3 class="heading-sm">Empieza a trabajar</h3>
+              <p class="body-base">Tu agente queda activo, atendiendo clientes reales desde el primer día.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         AGENTES IA — empleados digitales, tarjeta por agente
+         ========================================================================== -->
+    <section id="agentes" aria-labelledby="agentes-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>Agentes IA</p>
+          <h2 id="agentes-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Conoce a tu nuevo equipo.
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-4);" data-reveal data-reveal-delay="2">
+            Empleados digitales especializados, listos para incorporarse a tu empresa.
+          </p>
+        </div>
+
+        <div class="agents-grid">
+
+          <article class="agent-card" data-reveal data-reveal-delay="1">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--violet">R</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Recepcionista IA</h3>
+            <p class="body-base">Recibe, informa y deriva cada contacto entrante en segundos.</p>
+            <ul class="agent-card__list">
+              <li>Responde WhatsApp y email</li>
+              <li>Agenda citas en tu calendario</li>
+              <li>Tiempo de respuesta &lt; 5s</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+          <article class="agent-card" data-reveal data-reveal-delay="2">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--cyan">V</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Vendedor IA</h3>
+            <p class="body-base">Cualifica, presenta tu producto y cierra ventas sin perder ni un lead.</p>
+            <ul class="agent-card__list">
+              <li>Detecta intención de compra</li>
+              <li>Envía presupuestos al instante</li>
+              <li>Compatible con tu CRM</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+          <article class="agent-card" data-reveal data-reveal-delay="3">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--violet">S</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Secretaria IA</h3>
+            <p class="body-base">Organiza tu agenda, confirma citas y gestiona cambios sin fricción.</p>
+            <ul class="agent-card__list">
+              <li>Reprograma automáticamente</li>
+              <li>Envía recordatorios</li>
+              <li>Sincroniza con Google Calendar</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+          <article class="agent-card" data-reveal data-reveal-delay="4">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--cyan">A</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Asistente Administrativo</h3>
+            <p class="body-base">Genera documentos, organiza archivos y resume información clave.</p>
+            <ul class="agent-card__list">
+              <li>Crea contratos y presupuestos</li>
+              <li>Resume conversaciones largas</li>
+              <li>Compatible con Drive y Sheets</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+          <article class="agent-card" data-reveal data-reveal-delay="5">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--violet">C</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Captador de Leads</h3>
+            <p class="body-base">Detecta nuevas oportunidades en redes y formularios al instante.</p>
+            <ul class="agent-card__list">
+              <li>Monitoriza Instagram y Facebook</li>
+              <li>Cualifica antes de avisar al equipo</li>
+              <li>Integra con tus anuncios</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+          <article class="agent-card" data-reveal data-reveal-delay="6">
+            <div class="agent-card__top">
+              <span class="agent-card__avatar agent-card__avatar--cyan">T</span>
+              <span class="agent-card__live"><span></span>24/7</span>
+            </div>
+            <h3 class="heading-sm">Soporte Técnico</h3>
+            <p class="body-base">Resuelve dudas frecuentes y escala los casos complejos a tu equipo.</p>
+            <ul class="agent-card__list">
+              <li>Base de conocimiento propia</li>
+              <li>Escalado inteligente a humano</li>
+              <li>Disponible en varios idiomas</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--sm btn--block">Solicitar este agente</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         DASHBOARD INTERACTIVO — construido 100% en HTML/CSS, no es una imagen
+         ========================================================================== -->
+    <section id="dashboard" aria-labelledby="dashboard-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>El software</p>
+          <h2 id="dashboard-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Todo tu negocio, en un panel.
+          </h2>
+        </div>
+
+        <div class="product-dash" data-reveal data-reveal-delay="2">
+          <div class="product-dash__topbar">
+            <div class="product-dash__dots"><span></span><span></span><span></span></div>
+            <span class="product-dash__brand">ELYON · Panel de control</span>
+            <span class="float-dash__badge">En vivo</span>
+          </div>
+
+          <div class="product-dash__body">
+
+            <div class="dash-kpi-row">
+              <div class="dash-kpi">
+                <p class="mono-label">Conversaciones</p>
+                <p class="dash-kpi__value">312</p>
+                <p class="dash-kpi__delta dash-kpi__delta--up">▲ 18%</p>
+              </div>
+              <div class="dash-kpi">
+                <p class="mono-label">Leads</p>
+                <p class="dash-kpi__value">87</p>
+                <p class="dash-kpi__delta dash-kpi__delta--up">▲ 24%</p>
+              </div>
+              <div class="dash-kpi">
+                <p class="mono-label">Ventas</p>
+                <p class="dash-kpi__value">€14.2k</p>
+                <p class="dash-kpi__delta dash-kpi__delta--up">▲ 31%</p>
+              </div>
+              <div class="dash-kpi">
+                <p class="mono-label">Reservas</p>
+                <p class="dash-kpi__value">54</p>
+                <p class="dash-kpi__delta dash-kpi__delta--up">▲ 12%</p>
+              </div>
+            </div>
+
+            <div class="dash-mid-row">
+              <div class="dash-panel dash-panel--chart">
+                <div class="dash-panel__head">
+                  <span class="dash-panel__title">Ingresos generados por IA</span>
+                  <span class="mono-label">últimos 30 días</span>
+                </div>
+                <svg class="dash-chart-svg" viewBox="0 0 460 120" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="dashAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#7C5CFF" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="dashLineGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#7C5CFF"/>
+                      <stop offset="100%" stop-color="#00D4FF"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 95 C 50 90, 70 70, 100 65 C 140 58, 160 78, 200 60 C 230 46, 260 55, 300 35 C 330 22, 360 42, 400 25 C 420 16, 440 24, 460 12 L 460 120 L 0 120 Z" fill="url(#dashAreaGrad)"/>
+                  <path d="M0 95 C 50 90, 70 70, 100 65 C 140 58, 160 78, 200 60 C 230 46, 260 55, 300 35 C 330 22, 360 42, 400 25 C 420 16, 440 24, 460 12" stroke="url(#dashLineGrad)" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="460" cy="12" r="4.5" fill="#00D4FF" stroke="#050505" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <div class="dash-panel dash-panel--calendar">
+                <div class="dash-panel__head">
+                  <span class="dash-panel__title">Próximas citas</span>
+                </div>
+                <div class="dash-cal-item">
+                  <span class="dash-cal-item__time">09:30</span>
+                  <span class="dash-cal-item__bar" style="background:var(--accent-violet)"></span>
+                  <span class="dash-cal-item__name">Laura M. — Consulta</span>
+                </div>
+                <div class="dash-cal-item">
+                  <span class="dash-cal-item__time">11:00</span>
+                  <span class="dash-cal-item__bar" style="background:var(--accent-cyan)"></span>
+                  <span class="dash-cal-item__name">Marc R. — Revisión</span>
+                </div>
+                <div class="dash-cal-item">
+                  <span class="dash-cal-item__time">12:15</span>
+                  <span class="dash-cal-item__bar" style="background:var(--accent-violet)"></span>
+                  <span class="dash-cal-item__name">Estudio Vega — Demo</span>
+                </div>
+                <div class="dash-cal-item">
+                  <span class="dash-cal-item__time">16:45</span>
+                  <span class="dash-cal-item__bar" style="background:var(--accent-cyan)"></span>
+                  <span class="dash-cal-item__name">Pol S. — Seguimiento</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-bottom-row">
+              <div class="dash-panel dash-panel--activity">
+                <div class="dash-panel__head">
+                  <span class="dash-panel__title">Actividad de los agentes</span>
+                </div>
+                <div class="dash-activity-item">
+                  <span class="dash-activity-item__icon dash-activity-item__icon--violet">✓</span>
+                  <span><strong>Reserva confirmada</strong> por el Agente WhatsApp · hace 2 min</span>
+                </div>
+                <div class="dash-activity-item">
+                  <span class="dash-activity-item__icon dash-activity-item__icon--cyan">€</span>
+                  <span><strong>Venta cerrada</strong> · €420 · Agente Vendedor · hace 11 min</span>
+                </div>
+                <div class="dash-activity-item">
+                  <span class="dash-activity-item__icon dash-activity-item__icon--violet">✉</span>
+                  <span><strong>14 correos</strong> clasificados y respondidos · hace 26 min</span>
+                </div>
+              </div>
+
+              <div class="dash-panel dash-panel--clients">
+                <div class="dash-panel__head">
+                  <span class="dash-panel__title">Clientes recientes</span>
+                </div>
+                <div class="dash-client-row">
+                  <span class="dash-client-row__avatar" style="background:var(--accent-violet)">LM</span>
+                  <span class="dash-client-row__name">Laura Martín</span>
+                  <span class="status-pill status-pill--success">Activo</span>
+                </div>
+                <div class="dash-client-row">
+                  <span class="dash-client-row__avatar" style="background:var(--accent-cyan)">MR</span>
+                  <span class="dash-client-row__name">Marc Ribera</span>
+                  <span class="status-pill status-pill--info">Nuevo</span>
+                </div>
+                <div class="dash-client-row">
+                  <span class="dash-client-row__avatar" style="background:var(--accent-violet)">EV</span>
+                  <span class="dash-client-row__name">Estudio Vega</span>
+                  <span class="status-pill status-pill--success">Activo</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         ELYON LIVE — centro de operaciones, métricas en tiempo real
+         ========================================================================== -->
+    <section id="nexora-live" aria-labelledby="live-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>
+            <span class="live-pulse" aria-hidden="true"></span>ELYON Live
+          </p>
+          <h2 id="live-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            La red, funcionando ahora mismo.
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-4); margin-inline:auto;" data-reveal data-reveal-delay="2">
+            Una muestra en vivo de lo que los agentes de ELYON procesan cada segundo en toda la red.
+          </p>
+        </div>
+
+        <div class="live-grid" data-reveal data-reveal-delay="2">
+          <div class="live-card live-card--wide">
+            <div class="live-card__head">
+              <span class="live-card__label">Conversaciones procesadas</span>
+              <span class="live-status"><span class="live-status__dot"></span>En vivo</span>
+            </div>
+            <p class="live-card__value" data-live="conversations" data-live-base="184920" data-live-inc="3,11">184.920</p>
+            <div class="live-sparkline" data-sparkline aria-hidden="true"></div>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Automatizaciones activas</span></div>
+            <p class="live-card__value" data-live="automations" data-live-base="12840" data-live-inc="1,4">12.840</p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Horas ahorradas hoy</span></div>
+            <p class="live-card__value" data-live="hours" data-live-base="9310" data-live-inc="1,3">9.310</p>
+          </div>
+
+          <div class="live-card live-card--accent">
+            <div class="live-card__head"><span class="live-card__label">Ingresos generados</span></div>
+            <p class="live-card__value" data-live="revenue" data-live-base="428750" data-live-inc="18,74" data-live-prefix="€">€428.750</p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Clientes conectados</span></div>
+            <p class="live-card__value" data-live="clients" data-live-base="2447" data-live-inc="0,2">2.447</p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Agentes trabajando</span></div>
+            <p class="live-card__value" data-live="agents" data-live-base="1893" data-live-inc="0,3">1.893</p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Tiempo de respuesta medio</span></div>
+            <p class="live-card__value"><span data-live="response" data-live-base="1.4" data-live-inc="0,0" data-live-float="1">1.4</span><span class="live-card__unit">s</span></p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Mensajes enviados</span></div>
+            <p class="live-card__value" data-live="messages" data-live-base="763210" data-live-inc="9,27">763.210</p>
+          </div>
+
+          <div class="live-card">
+            <div class="live-card__head"><span class="live-card__label">Reservas realizadas</span></div>
+            <p class="live-card__value" data-live="bookings" data-live-base="38492" data-live-inc="1,5">38.492</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         DEMO IA — chat interactivo con respuestas simuladas
+         ========================================================================== -->
+    <section id="demo-ia" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="demo-layout">
+          <div class="demo-intro">
+            <p class="eyebrow" data-reveal>Demo en vivo</p>
+            <h2 id="demo-title" class="heading-lg" data-reveal data-reveal-delay="1">
+              Habla con un<br>agente ELYON.
+            </h2>
+            <p class="body-lg" style="margin-top: var(--space-4);" data-reveal data-reveal-delay="2">
+              Escribe o elige una pregunta y comprueba cómo respondería un agente entrenado para tu negocio. Esta es una demostración — el agente real se entrena con tus datos.
+            </p>
+            <ul class="demo-features" data-reveal data-reveal-delay="3">
+              <li>Respuestas en lenguaje natural</li>
+              <li>Entrenado con tu catálogo y precios</li>
+              <li>Disponible en todos tus canales</li>
+            </ul>
+          </div>
+
+          <div class="demo-chat" data-reveal data-reveal-delay="2">
+            <div class="demo-chat__header">
+              <span class="demo-chat__avatar">N</span>
+              <div>
+                <p class="demo-chat__name">Agente ELYON</p>
+                <p class="demo-chat__status"><span></span>Escribiendo respuestas de demostración</p>
+              </div>
+            </div>
+
+            <div class="demo-chat__messages" id="demoChatMessages" aria-live="polite">
+              <div class="demo-msg demo-msg--bot">
+                <div class="demo-msg__bubble">¡Hola! Soy un agente de demostración de ELYON. Elige una de las opciones de abajo y te enseño cómo respondería con tu negocio. 👇</div>
+              </div>
+            </div>
+
+            <div class="demo-chat__suggestions" id="demoSuggestions">
+              <button class="demo-suggestion" data-demo-key="automatizar">Quiero automatizar mi negocio</button>
+              <button class="demo-suggestion" data-demo-key="vender">Quiero vender más</button>
+              <button class="demo-suggestion" data-demo-key="chatbot">Necesito un chatbot</button>
+              <button class="demo-suggestion" data-demo-key="whatsapp">Quiero automatizar WhatsApp</button>
+              <button class="demo-suggestion" data-demo-key="reservas">Quiero reservar citas automáticamente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         DEMO WHATSAPP — chat escribible de peluquería (motor offline)
+         ========================================================================== -->
+    <section id="demo-whatsapp" aria-labelledby="wa-title">
+      <div class="container">
+        <div class="wa-layout">
+          <div class="wa-intro">
+            <p class="eyebrow" data-reveal>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:14px;height:14px;"><path d="M12 2a10 10 0 00-8.5 15.2L2 22l4.9-1.5A10 10 0 1012 2z"/></svg>
+              Demo WhatsApp
+            </p>
+            <h2 id="wa-title" class="heading-lg" data-reveal data-reveal-delay="1">
+              Escríbele tú mismo.<br>Pruébalo como un cliente.
+            </h2>
+            <p class="body-lg" style="margin-top: var(--space-4);" data-reveal data-reveal-delay="2">
+              Este es el agente de <strong>Peluquería Bella</strong>, un negocio de ejemplo. Escribe en el chat igual que haría un cliente: pregúntale precios, horarios o pídele una cita. Verás cómo responde y reserva solo.
+            </p>
+            <ul class="wa-intro__hints" data-reveal data-reveal-delay="3">
+              <li>Prueba a escribir <em>"quiero una cita"</em></li>
+              <li>O pregúntale <em>"¿cuánto cuesta un tinte?"</em></li>
+              <li>O <em>"¿a qué hora abrís?"</em></li>
+            </ul>
+            <p class="wa-intro__note" data-reveal data-reveal-delay="4">
+              Es una demostración. Un agente real funcionaría en tu propio número, con tu agenda y tus servicios.
+            </p>
+          </div>
+
+          <!-- Teléfono con WhatsApp -->
+          <div class="wa-phone" id="waDemo" data-reveal data-reveal-delay="2">
+            <div class="wa-phone__notch" aria-hidden="true"></div>
+            <div class="wa-phone__screen">
+              <div class="wa-topbar">
+                <span class="wa-topbar__back" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="wa-topbar__avatar">B</span>
+                <div class="wa-topbar__info">
+                  <p class="wa-topbar__name">Peluquería Bella</p>
+                  <p class="wa-topbar__status">en línea</p>
+                </div>
+                <span class="wa-topbar__icons" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M15.5 10.5l5-3v9l-5-3v-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><rect x="3" y="6" width="12.5" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M6.5 3.5A2 2 0 018.4 5l.7 2.4a2 2 0 01-.5 1.9l-1 1a13 13 0 005 5l1-1a2 2 0 011.9-.5l2.4.7a2 2 0 011.5 1.9v2.5a2 2 0 01-2.2 2A18 18 0 013.5 5.7a2 2 0 012-2.2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+
+              <div class="wa-messages" data-wa-messages aria-live="polite" aria-label="Conversación de WhatsApp"></div>
+
+              <div class="wa-quick" data-wa-quick></div>
+
+              <form class="wa-inputbar" data-wa-form>
+                <span class="wa-inputbar__emoji" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8.5 14.5a4.5 4.5 0 007 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                </span>
+                <input type="text" class="wa-inputbar__input" data-wa-input placeholder="Escribe un mensaje…" autocomplete="off" aria-label="Escribe un mensaje">
+                <button type="submit" class="wa-inputbar__send" aria-label="Enviar mensaje">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 8 6 8-16-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="currentColor"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTORES
+         ========================================================================== -->
+    <section id="sectores" aria-labelledby="sectores-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Sectores</p>
+          <h2 id="sectores-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Hecho a medida para tu negocio.
+          </h2>
+        </div>
+
+        <div class="sectors-grid">
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="1" style="--sector-grad: linear-gradient(135deg, #2a1a4a, #120a24);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 3v7a2 2 0 002 2v9M5 3v0M8 3v7M11 3v0M8 3v7a3 3 0 01-3 3M17 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">Restaurantes</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="2" style="--sector-grad: linear-gradient(135deg, #0e3a44, #0a1a24);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 8L20 19M8.5 16L20 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="sector-card__name">Barberías</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="3" style="--sector-grad: linear-gradient(135deg, #321f52, #150c2c);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
+            <span class="sector-card__name">Clínicas</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="4" style="--sector-grad: linear-gradient(135deg, #103a4a, #0a1c26);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 5.5C10 4 7 4 6 6c-1.5 3-.5 8 .5 11 .5 1.5 1.5 1.5 2-.5.3-1.5.8-2.5 1.5-2.5s1.2 1 1.5 2.5c.5 2 1.5 2 2 .5 1-3 2-8 .5-11-1-2-4-2-6-.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">Dentistas</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="5" style="--sector-grad: linear-gradient(135deg, #2c1c4e, #130b28);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M12 6l-7 3M12 6l7 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12c0 1.7 1.3 3 3 3s3-1.3 3-3M16 12c0 1.7 1.3 3 3 3s3-1.3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="sector-card__name">Abogados</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="6" style="--sector-grad: linear-gradient(135deg, #0e3640, #091a20);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 20h16M10 20v-5h4v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">Inmobiliarias</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="1" style="--sector-grad: linear-gradient(135deg, #301e50, #140b28);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 20V8l9-4 9 4v12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 20h18M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="sector-card__name">Hoteles</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="2" style="--sector-grad: linear-gradient(135deg, #0e3a40, #081a1e);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 4L2 9l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 11v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5M22 9v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">Academias</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="3" style="--sector-grad: linear-gradient(135deg, #2a1c4c, #110a26);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.2" opacity="0.7"/></svg>
+            </span>
+            <span class="sector-card__name">Centros deportivos</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="4" style="--sector-grad: linear-gradient(135deg, #0c3844, #081820);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1.5 3h9L18 2M5 5h14l-1 6H6L5 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 11l1 5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">Tiendas</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="5" style="--sector-grad: linear-gradient(135deg, #2e1e52, #130c28);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 13l2-5h14l2 5M5 13h14v5H5v-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="8" cy="15.5" r="1" fill="currentColor"/><circle cx="16" cy="15.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <span class="sector-card__name">Concesionarios</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="6" style="--sector-grad: linear-gradient(135deg, #0e3440, #081820);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l7-4 7 4v14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 21v-4h6v4M9 10h.01M15 10h.01M9 13h.01M15 13h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="sector-card__name">Constructoras</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="1" style="--sector-grad: linear-gradient(135deg, #2c1f4e, #120b28);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </span>
+            <span class="sector-card__name">Agencias</span>
+          </a>
+          <a href="#contacto" class="sector-card" data-reveal data-reveal-delay="2" style="--sector-grad: linear-gradient(135deg, #0e3a3e, #081c1e);">
+            <span class="sector-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 2l1.5 3h9L18 2M5 5h14l-1 6H6L5 5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 11l1 5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="sector-card__name">E-commerce</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="integraciones" aria-labelledby="integraciones-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Integraciones</p>
+          <h2 id="integraciones-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Conecta con las herramientas<br class="hide-mobile">que ya usas.
+          </h2>
+        </div>
+
+        <div class="integrations-grid">
+          <div class="integration-chip" data-reveal data-reveal-delay="1"><span class="integration-chip__dot" style="background:#25D366"></span>WhatsApp</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="2"><span class="integration-chip__dot" style="background:#E1306C"></span>Instagram</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="3"><span class="integration-chip__dot" style="background:#1877F2"></span>Facebook</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="4"><span class="integration-chip__dot" style="background:#0084FF"></span>Messenger</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="5"><span class="integration-chip__dot" style="background:#26A5E4"></span>Telegram</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="6"><span class="integration-chip__dot" style="background:#EA4335"></span>Gmail</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="1"><span class="integration-chip__dot" style="background:#4285F4"></span>Google Calendar</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="2"><span class="integration-chip__dot" style="background:#34A853"></span>Google Drive</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="3"><span class="integration-chip__dot" style="background:#4A154B"></span>Slack</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="4"><span class="integration-chip__dot" style="background:#5865F2"></span>Discord</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="5"><span class="integration-chip__dot" style="background:#FF7A59"></span>HubSpot</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="6"><span class="integration-chip__dot" style="background:#00A1E0"></span>Salesforce</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="1"><span class="integration-chip__dot" style="background:#FF4A00"></span>Zapier</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="2"><span class="integration-chip__dot" style="background:#6D00CC"></span>Make</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="3"><span class="integration-chip__dot" style="background:#34A853"></span>Google Sheets</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="4"><span class="integration-chip__dot" style="background:#635BFF"></span>Stripe</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="5"><span class="integration-chip__dot" style="background:#0069FF"></span>Calendly</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="6"><span class="integration-chip__dot" style="background:#2D8CFF"></span>Zoom</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="1"><span class="integration-chip__dot" style="background:#6264A7"></span>Microsoft Teams</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="2"><span class="integration-chip__dot" style="background:#FFFFFF"></span>Notion</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="3"><span class="integration-chip__dot" style="background:#96BF48"></span>Shopify</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="4"><span class="integration-chip__dot" style="background:#7F54B3"></span>WooCommerce</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="5"><span class="integration-chip__dot" style="background:#21759B"></span>WordPress</div>
+          <div class="integration-chip" data-reveal data-reveal-delay="6"><span class="integration-chip__dot" style="background:#00D4FF"></span>API personalizada</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CASOS DE ÉXITO — métricas con contador animado
+         ========================================================================== -->
+    <section id="casos-exito" aria-labelledby="casos-exito-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Casos de éxito</p>
+          <h2 id="casos-exito-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Resultados, no promesas.
+          </h2>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card" data-reveal data-reveal-delay="1">
+            <p class="stat-card__value" data-count-to="340" data-suffix="%">0%</p>
+            <p class="mono-label">Leads</p>
+          </div>
+          <div class="stat-card" data-reveal data-reveal-delay="2">
+            <p class="stat-card__value" data-count-to="78" data-prefix="-" data-suffix="%">-0%</p>
+            <p class="mono-label">Tiempo administrativo</p>
+          </div>
+          <div class="stat-card" data-reveal data-reveal-delay="3">
+            <p class="stat-card__value" data-count-to="52" data-suffix="%">0%</p>
+            <p class="mono-label">Reservas</p>
+          </div>
+          <div class="stat-card" data-reveal data-reveal-delay="4">
+            <p class="stat-card__value">24/7</p>
+            <p class="mono-label">Disponibilidad</p>
+          </div>
+          <div class="stat-card" data-reveal data-reveal-delay="5">
+            <p class="stat-card__value" data-count-to="90" data-suffix="%">0%</p>
+            <p class="mono-label">Velocidad de respuesta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CASOS DE ÉXITO DETALLADOS — antes / después / KPIs por sector
+         ========================================================================== -->
+    <section id="casos-detalle" aria-labelledby="casos-detalle-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Casos reales</p>
+          <h2 id="casos-detalle-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            El antes y el después.
+          </h2>
+        </div>
+
+        <div class="cases-tabs" role="tablist" aria-label="Sectores con casos de éxito" data-reveal>
+          <button class="cases-tab is-active" role="tab" aria-selected="true" data-case="barberia">Barberías</button>
+          <button class="cases-tab" role="tab" aria-selected="false" data-case="restaurante">Restaurantes</button>
+          <button class="cases-tab" role="tab" aria-selected="false" data-case="clinica">Clínicas</button>
+          <button class="cases-tab" role="tab" aria-selected="false" data-case="inmobiliaria">Inmobiliarias</button>
+          <button class="cases-tab" role="tab" aria-selected="false" data-case="ecommerce">E-commerce</button>
+        </div>
+
+        <div class="cases-panel" data-reveal data-reveal-delay="1">
+          <!-- Barberías (visible por defecto) -->
+          <div class="case-content is-active" data-case-content="barberia">
+            <div class="case-grid">
+              <div class="case-story">
+                <div class="case-badge">Barbería · 3 sedes</div>
+                <div class="case-ba">
+                  <div class="case-ba__col case-ba__col--before">
+                    <p class="case-ba__label">Antes</p>
+                    <ul>
+                      <li>Reservas por teléfono y a mano</li>
+                      <li>Muchas ausencias sin aviso</li>
+                      <li>WhatsApp sin responder de noche</li>
+                    </ul>
+                  </div>
+                  <div class="case-ba__arrow" aria-hidden="true">→</div>
+                  <div class="case-ba__col case-ba__col--after">
+                    <p class="case-ba__label">Después</p>
+                    <ul>
+                      <li>Agente IA reserva 24/7 por WhatsApp</li>
+                      <li>Recordatorios automáticos</li>
+                      <li>Agenda siempre llena</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="case-autos">
+                  <span class="case-auto-chip">Agente WhatsApp</span>
+                  <span class="case-auto-chip">Recordatorios</span>
+                  <span class="case-auto-chip">Reseñas automáticas</span>
+                </div>
+              </div>
+              <div class="case-kpis">
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="42" data-suffix="%">0%</p><p class="mono-label">Menos ausencias</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="31" data-suffix="%">0%</p><p class="mono-label">Más reservas</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="18" data-prefix="+" data-suffix="h">0h</p><p class="mono-label">Ahorradas / semana</p></div>
+                <div class="case-kpi case-kpi--chart"><div class="case-bars" data-case-bars aria-hidden="true"></div><p class="mono-label">Reservas / mes</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Restaurantes -->
+          <div class="case-content" data-case-content="restaurante">
+            <div class="case-grid">
+              <div class="case-story">
+                <div class="case-badge">Restaurante · 120 mesas/día</div>
+                <div class="case-ba">
+                  <div class="case-ba__col case-ba__col--before">
+                    <p class="case-ba__label">Antes</p>
+                    <ul>
+                      <li>Reservas descoordinadas</li>
+                      <li>Llamadas perdidas en hora punta</li>
+                      <li>Sin datos de clientes recurrentes</li>
+                    </ul>
+                  </div>
+                  <div class="case-ba__arrow" aria-hidden="true">→</div>
+                  <div class="case-ba__col case-ba__col--after">
+                    <p class="case-ba__label">Después</p>
+                    <ul>
+                      <li>Reservas automáticas y confirmadas</li>
+                      <li>IA telefónica en hora punta</li>
+                      <li>Base de clientes con preferencias</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="case-autos">
+                  <span class="case-auto-chip">IA telefónica</span>
+                  <span class="case-auto-chip">Reservas</span>
+                  <span class="case-auto-chip">CRM</span>
+                </div>
+              </div>
+              <div class="case-kpis">
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="56" data-suffix="%">0%</p><p class="mono-label">Menos llamadas perdidas</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="27" data-suffix="%">0%</p><p class="mono-label">Más ocupación</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="24" data-prefix="+" data-suffix="h">0h</p><p class="mono-label">Ahorradas / semana</p></div>
+                <div class="case-kpi case-kpi--chart"><div class="case-bars" data-case-bars aria-hidden="true"></div><p class="mono-label">Cubiertos / mes</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clínicas -->
+          <div class="case-content" data-case-content="clinica">
+            <div class="case-grid">
+              <div class="case-story">
+                <div class="case-badge">Clínica estética · 8 profesionales</div>
+                <div class="case-ba">
+                  <div class="case-ba__col case-ba__col--before">
+                    <p class="case-ba__label">Antes</p>
+                    <ul>
+                      <li>Recepción saturada</li>
+                      <li>Seguimientos que se olvidaban</li>
+                      <li>Huecos sin cubrir en agenda</li>
+                    </ul>
+                  </div>
+                  <div class="case-ba__arrow" aria-hidden="true">→</div>
+                  <div class="case-ba__col case-ba__col--after">
+                    <p class="case-ba__label">Después</p>
+                    <ul>
+                      <li>Agente gestiona citas y dudas</li>
+                      <li>Seguimientos automáticos post-visita</li>
+                      <li>Lista de espera inteligente</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="case-autos">
+                  <span class="case-auto-chip">Recepcionista IA</span>
+                  <span class="case-auto-chip">Seguimientos</span>
+                  <span class="case-auto-chip">Lista de espera</span>
+                </div>
+              </div>
+              <div class="case-kpis">
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="63" data-suffix="%">0%</p><p class="mono-label">Menos carga recepción</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="38" data-suffix="%">0%</p><p class="mono-label">Más seguimientos</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="29" data-prefix="+" data-suffix="h">0h</p><p class="mono-label">Ahorradas / semana</p></div>
+                <div class="case-kpi case-kpi--chart"><div class="case-bars" data-case-bars aria-hidden="true"></div><p class="mono-label">Citas / mes</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inmobiliarias -->
+          <div class="case-content" data-case-content="inmobiliaria">
+            <div class="case-grid">
+              <div class="case-story">
+                <div class="case-badge">Inmobiliaria · 400 leads/mes</div>
+                <div class="case-ba">
+                  <div class="case-ba__col case-ba__col--before">
+                    <p class="case-ba__label">Antes</p>
+                    <ul>
+                      <li>Leads sin cualificar</li>
+                      <li>Respuesta lenta a portales</li>
+                      <li>Visitas mal coordinadas</li>
+                    </ul>
+                  </div>
+                  <div class="case-ba__arrow" aria-hidden="true">→</div>
+                  <div class="case-ba__col case-ba__col--after">
+                    <p class="case-ba__label">Después</p>
+                    <ul>
+                      <li>Agente cualifica cada lead al instante</li>
+                      <li>Respuesta inmediata 24/7</li>
+                      <li>Visitas agendadas solas</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="case-autos">
+                  <span class="case-auto-chip">Captador de leads</span>
+                  <span class="case-auto-chip">Cualificación</span>
+                  <span class="case-auto-chip">Agenda visitas</span>
+                </div>
+              </div>
+              <div class="case-kpis">
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="340" data-suffix="%">0%</p><p class="mono-label">Más leads cualificados</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="52" data-suffix="%">0%</p><p class="mono-label">Más visitas</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="33" data-prefix="+" data-suffix="h">0h</p><p class="mono-label">Ahorradas / semana</p></div>
+                <div class="case-kpi case-kpi--chart"><div class="case-bars" data-case-bars aria-hidden="true"></div><p class="mono-label">Leads / mes</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-commerce -->
+          <div class="case-content" data-case-content="ecommerce">
+            <div class="case-grid">
+              <div class="case-story">
+                <div class="case-badge">E-commerce · 15.000 pedidos/mes</div>
+                <div class="case-ba">
+                  <div class="case-ba__col case-ba__col--before">
+                    <p class="case-ba__label">Antes</p>
+                    <ul>
+                      <li>Soporte desbordado</li>
+                      <li>Carritos abandonados sin recuperar</li>
+                      <li>Dudas de producto sin respuesta</li>
+                    </ul>
+                  </div>
+                  <div class="case-ba__arrow" aria-hidden="true">→</div>
+                  <div class="case-ba__col case-ba__col--after">
+                    <p class="case-ba__label">Después</p>
+                    <ul>
+                      <li>Agente resuelve dudas al momento</li>
+                      <li>Recuperación automática de carritos</li>
+                      <li>Recomendaciones personalizadas</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="case-autos">
+                  <span class="case-auto-chip">Soporte IA</span>
+                  <span class="case-auto-chip">Recuperación carritos</span>
+                  <span class="case-auto-chip">Cross-selling</span>
+                </div>
+              </div>
+              <div class="case-kpis">
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="47" data-suffix="%">0%</p><p class="mono-label">Menos tickets soporte</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="23" data-suffix="%">0%</p><p class="mono-label">Carritos recuperados</p></div>
+                <div class="case-kpi"><p class="case-kpi__value" data-count-to="35" data-prefix="+" data-suffix="h">0h</p><p class="mono-label">Ahorradas / semana</p></div>
+                <div class="case-kpi case-kpi--chart"><div class="case-bars" data-case-bars aria-hidden="true"></div><p class="mono-label">Ventas / mes</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         TESTIMONIOS
+         ========================================================================== -->
+    <section id="testimonios" aria-labelledby="testimonios-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Testimonios</p>
+          <h2 id="testimonios-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Empresas que ya trabajan distinto.
+          </h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card" data-reveal data-reveal-delay="1">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial-card__quote">"Dejamos de perder reservas por las noches. El agente de WhatsApp cierra citas mientras dormimos y, por la mañana, la agenda ya está llena."</p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" style="background:var(--accent-violet)">SR</span>
+              <div>
+                <p class="testimonial-card__name">Sara Ruiz</p>
+                <p class="testimonial-card__role">Directora · Clínica DermaEstética</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-reveal data-reveal-delay="2">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial-card__quote">"El agente de ventas cualifica los leads antes de que lleguen a mi equipo. Cerramos un 30% más rápido porque ya no perdemos tiempo con curiosos."</p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" style="background:var(--accent-cyan)">PJ</span>
+              <div>
+                <p class="testimonial-card__name">Pol Jiménez</p>
+                <p class="testimonial-card__role">CEO · Inmobiliaria Vega</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card" data-reveal data-reveal-delay="3">
+            <div class="testimonial-card__stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <p class="testimonial-card__quote">"Implementación en menos de una semana y resultados desde el primer día. ELYON entendió nuestro negocio mejor que algunas consultoras."</p>
+            <div class="testimonial-card__author">
+              <span class="testimonial-card__avatar" style="background:var(--accent-violet)">MT</span>
+              <div>
+                <p class="testimonial-card__name">Marta Torres</p>
+                <p class="testimonial-card__role">Fundadora · Academia Idiomas Plus</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         COMPARATIVA PREMIUM — Empleado administrativo vs Agente IA
+         ========================================================================== -->
+    <section id="comparativa" aria-labelledby="comparativa-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>La comparación</p>
+          <h2 id="comparativa-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            La cuenta sale sola.
+          </h2>
+        </div>
+
+        <div class="compare-table-wrap" data-reveal data-reveal-delay="1">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th><span class="compare-th-label">Comparativa</span></th>
+                <th><span class="compare-th-old">Empleado administrativo</span></th>
+                <th class="compare-col-highlight">
+                  <span class="compare-th-new">
+                    <span class="compare-th-label">Recomendado</span>
+                    <span class="compare-th-new__badge">Agente IA ELYON</span>
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Coste mensual</th>
+                <td class="compare-cell-old">+2.000 €</td>
+                <td class="compare-col-highlight compare-cell-new">Desde 149 €</td>
+              </tr>
+              <tr>
+                <th scope="row">Horas trabajadas</th>
+                <td class="compare-cell-old">40 h / semana</td>
+                <td class="compare-col-highlight compare-cell-new">168 h / semana</td>
+              </tr>
+              <tr>
+                <th scope="row">Vacaciones</th>
+                <td class="compare-cell-old"><span class="compare-check compare-check--no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>30 días/año</span></td>
+                <td class="compare-col-highlight compare-cell-new"><span class="compare-check compare-check--yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Nunca</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Bajas y ausencias</th>
+                <td class="compare-cell-old"><span class="compare-check compare-check--no"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Posibles</span></td>
+                <td class="compare-col-highlight compare-cell-new"><span class="compare-check compare-check--yes"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Cero</span></td>
+              </tr>
+              <tr>
+                <th scope="row">Disponibilidad</th>
+                <td class="compare-cell-old">Horario de oficina</td>
+                <td class="compare-col-highlight compare-cell-new">24/7/365</td>
+              </tr>
+              <tr>
+                <th scope="row">Clientes en paralelo</th>
+                <td class="compare-cell-old">1 a la vez</td>
+                <td class="compare-col-highlight compare-cell-new">Ilimitados</td>
+              </tr>
+              <tr>
+                <th scope="row">Tiempo de respuesta</th>
+                <td class="compare-cell-old">Minutos u horas</td>
+                <td class="compare-col-highlight compare-cell-new">Menos de 5 segundos</td>
+              </tr>
+              <tr>
+                <th scope="row">Escalabilidad</th>
+                <td class="compare-cell-old">Contratar más gente</td>
+                <td class="compare-col-highlight compare-cell-new">Instantánea</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="compare-note">Comparativa orientativa basada en el coste medio de un puesto administrativo a jornada completa en España.</p>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CALCULADORA DE AHORRO IA
+         ========================================================================== -->
+    <section id="calculadora" aria-labelledby="calculadora-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Calculadora</p>
+          <h2 id="calculadora-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            ¿Cuánto puedes ahorrar?
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-4); margin-inline:auto;" data-reveal data-reveal-delay="2">
+            Una estimación rápida del impacto de automatizar tareas repetitivas con IA.
+          </p>
+        </div>
+
+        <div class="calculator" data-reveal data-reveal-delay="3">
+          <div class="calculator__inputs">
+            <div class="calculator__field">
+              <label for="calcEmployees">Número de empleados</label>
+              <input type="range" id="calcEmployees" min="1" max="50" value="5" step="1">
+              <output for="calcEmployees" id="calcEmployeesOut">5</output>
+            </div>
+            <div class="calculator__field">
+              <label for="calcHours">Horas administrativas / semana (por persona)</label>
+              <input type="range" id="calcHours" min="1" max="30" value="10" step="1">
+              <output for="calcHours" id="calcHoursOut">10 h</output>
+            </div>
+            <div class="calculator__field">
+              <label for="calcSalary">Salario medio bruto / mes</label>
+              <input type="range" id="calcSalary" min="1200" max="5000" value="2200" step="100">
+              <output for="calcSalary" id="calcSalaryOut">2.200 €</output>
+            </div>
+            <div class="calculator__field">
+              <label for="calcLostHours">Horas perdidas / semana en tareas repetitivas</label>
+              <input type="range" id="calcLostHours" min="1" max="20" value="6" step="1">
+              <output for="calcLostHours" id="calcLostHoursOut">6 h</output>
+            </div>
+          </div>
+
+          <div class="calculator__results">
+            <div class="calculator__result">
+              <p class="mono-label">Tiempo ahorrado / mes</p>
+              <p class="calculator__result-value" id="calcResultTime">0 h</p>
+            </div>
+            <div class="calculator__result">
+              <p class="mono-label">Dinero ahorrado / mes</p>
+              <p class="calculator__result-value calculator__result-value--accent" id="calcResultMoney">0 €</p>
+            </div>
+            <div class="calculator__result">
+              <p class="mono-label">Beneficio estimado / año</p>
+              <p class="calculator__result-value calculator__result-value--accent" id="calcResultYear">0 €</p>
+            </div>
+            <div class="calculator__result">
+              <p class="mono-label">ROI estimado</p>
+              <p class="calculator__result-value" id="calcResultROI">0%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         SEGURIDAD Y CONFIANZA
+         ========================================================================== -->
+    <section id="seguridad" aria-labelledby="seguridad-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Seguridad</p>
+          <h2 id="seguridad-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Tus datos, protegidos de principio a fin.
+          </h2>
+          <p class="body-lg" style="margin-top: var(--space-4); margin-inline:auto;" data-reveal data-reveal-delay="2">
+            Construido sobre infraestructura segura y cumpliendo la normativa europea de protección de datos.
+          </p>
+        </div>
+
+        <div class="security-grid">
+          <article class="security-card" data-reveal data-reveal-delay="1">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5l7.5 3v5.5c0 4.6-3.2 8.4-7.5 9.5-4.3-1.1-7.5-4.9-7.5-9.5V5.5l7.5-3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">Cumplimiento RGPD</p>
+              <p class="security-card__text">Tratamos los datos conforme al Reglamento General de Protección de Datos europeo.</p>
+            </div>
+          </article>
+
+          <article class="security-card" data-reveal data-reveal-delay="2">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M8 10.5V7.5a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="12" cy="15.5" r="1.4" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">Cifrado extremo a extremo</p>
+              <p class="security-card__text">La información viaja y se almacena cifrada con estándares del sector bancario.</p>
+            </div>
+          </article>
+
+          <article class="security-card" data-reveal data-reveal-delay="3">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21l1.4-4.2A8.5 8.5 0 1112 20.5c-1.5 0-2.9-.4-4.2-1.1L4 21z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M8.5 9.5c0 4 3 6.8 6.8 6.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">API oficial de WhatsApp</p>
+              <p class="security-card__text">Integración con la API de WhatsApp Business, sin métodos que arriesguen tu número.</p>
+            </div>
+          </article>
+
+          <article class="security-card" data-reveal data-reveal-delay="1">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="3.5" y="13.5" width="17" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><circle cx="7" cy="7.5" r="1" fill="currentColor"/><circle cx="7" cy="16.5" r="1" fill="currentColor"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">Infraestructura segura</p>
+              <p class="security-card__text">Servidores en la UE con monitorización continua y copias de seguridad.</p>
+            </div>
+          </article>
+
+          <article class="security-card" data-reveal data-reveal-delay="2">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5c-2 1.5-4.3 2.3-6.5 2.3V12c0 4 2.7 6.9 6.5 8.2 3.8-1.3 6.5-4.2 6.5-8.2V5.8c-2.2 0-4.5-.8-6.5-2.3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">Datos protegidos</p>
+              <p class="security-card__text">Nunca vendemos ni compartimos la información de tus clientes con terceros.</p>
+            </div>
+          </article>
+
+          <article class="security-card" data-reveal data-reveal-delay="3">
+            <span class="security-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5v19M5 6.5h9a3 3 0 010 6H8a3 3 0 000 6h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <p class="security-card__title">Tú eres el dueño de tus datos</p>
+              <p class="security-card__text">Puedes exportar o eliminar la información de tu cuenta cuando quieras.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         PRECIOS
+         ========================================================================== -->
+    <section id="precios" aria-labelledby="precios-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>Precios</p>
+          <h2 id="precios-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Un plan para cada etapa.
+          </h2>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card" data-reveal data-reveal-delay="1">
+            <p class="pricing-card__tier">Start</p>
+            <p class="pricing-card__price"><span class="pricing-card__currency">€</span>149<span class="pricing-card__period">/mes</span></p>
+            <p class="pricing-card__pitch">Ideal para empezar a automatizar sin contratar más personal.</p>
+            <ul class="pricing-card__features">
+              <li>1 agente de IA</li>
+              <li>1 canal (WhatsApp o Email)</li>
+              <li>Hasta 500 conversaciones/mes</li>
+              <li>3 integraciones</li>
+              <li>Soporte por email</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--block">Empezar con Start</a>
+            <p class="pricing-card__reassurance">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sin permanencia
+            </p>
+          </article>
+
+          <article class="pricing-card pricing-card--featured" data-reveal data-reveal-delay="2">
+            <span class="pricing-card__badge">Más contratado</span>
+            <p class="pricing-card__tier">Pro</p>
+            <p class="pricing-card__price"><span class="pricing-card__currency">€</span>349<span class="pricing-card__period">/mes</span></p>
+            <p class="pricing-card__pitch">El favorito de las empresas en crecimiento.</p>
+            <div class="pricing-card__highlight">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5l1.6 4.3 4.6.2-3.6 2.9 1.3 4.4L8 11l-3.9 2.3 1.3-4.4L1.8 6l4.6-.2L8 1.5z" fill="currentColor"/></svg>
+              Ahorra más de 18 horas por semana
+            </div>
+            <ul class="pricing-card__features">
+              <li>3 agentes de IA</li>
+              <li>Todos los canales</li>
+              <li>Conversaciones ilimitadas</li>
+              <li>Integraciones ilimitadas</li>
+              <li>CRM y automatizaciones avanzadas</li>
+              <li>Soporte prioritario</li>
+            </ul>
+            <a href="#contacto" class="btn btn--primary btn--block">Empezar con Pro</a>
+            <p class="pricing-card__reassurance">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Sin permanencia · Implementación rápida
+            </p>
+          </article>
+
+          <article class="pricing-card" data-reveal data-reveal-delay="3">
+            <p class="pricing-card__tier">Enterprise</p>
+            <p class="pricing-card__price" style="font-size: var(--text-2xl);">A medida</p>
+            <p class="pricing-card__pitch">Desde 10 empleados o múltiples sedes.</p>
+            <ul class="pricing-card__features">
+              <li>Agentes ilimitados</li>
+              <li>Multi-sede centralizado</li>
+              <li>API dedicada</li>
+              <li>Onboarding y formación del equipo</li>
+              <li>Manager de cuenta dedicado</li>
+              <li>SLA garantizado</li>
+            </ul>
+            <a href="#contacto" class="btn btn--ghost btn--block">Hablar con ventas</a>
+            <p class="pricing-card__reassurance">
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Soporte y onboarding incluidos
+            </p>
+          </article>
+        </div>
+
+        <!-- Anclaje de precio: reencuadra el coste frente a contratar personal -->
+        <div class="pricing-compare" data-reveal data-reveal-delay="2">
+          <div class="pricing-compare__side pricing-compare__side--old">
+            <span class="pricing-compare__tag">Un empleado administrativo</span>
+            <span class="pricing-compare__amount">+2.000 €<span class="pricing-compare__unit">/mes</span></span>
+            <span class="pricing-compare__detail">Jornada de 8 h · festivos y vacaciones aparte</span>
+          </div>
+          <div class="pricing-compare__vs" aria-hidden="true">vs</div>
+          <div class="pricing-compare__side pricing-compare__side--new">
+            <span class="pricing-compare__tag">Un agente IA de ELYON</span>
+            <span class="pricing-compare__amount pricing-compare__amount--accent">desde 149 €<span class="pricing-compare__unit">/mes</span></span>
+            <span class="pricing-compare__detail">Trabaja 24/7, todos los días del año</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         FAQ
+         ========================================================================== -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center">
+          <p class="eyebrow" style="justify-content:center" data-reveal>FAQ</p>
+          <h2 id="faq-title" class="heading-lg" data-reveal data-reveal-delay="1">
+            Preguntas frecuentes.
+          </h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item" data-reveal>
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Cuánto tarda la implementación?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>La mayoría de agentes quedan activos en menos de una semana. El plazo exacto depende del número de canales e integraciones que conectemos, pero el proceso siempre incluye un acompañamiento completo de nuestro equipo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="1">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Necesito conocimientos técnicos?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>No. Nosotros diseñamos, entrenamos y conectamos el agente por ti. Tu equipo solo necesita revisar y aprobar el tono y las respuestas durante el entrenamiento inicial.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="2">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿La IA sustituye a mis empleados?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>No los sustituye: se encarga de las tareas repetitivas para que tu equipo dedique su tiempo a lo que realmente aporta valor, como atender casos complejos o cerrar ventas importantes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="3">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Puedo conectar WhatsApp?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Sí, mediante la API oficial de WhatsApp Business. Puedes usar tu número actual y mantener el historial de conversaciones existente.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="4">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Funciona con mi CRM?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>ELYON se integra con los CRM más utilizados (HubSpot, Salesforce, y otros vía API o Zapier/Make). Si usas una herramienta distinta, lo revisamos en la auditoría inicial.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="5">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Qué pasa si necesito cambios?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Puedes pedir ajustes en cualquier momento: nuevas respuestas, cambios de tono o nuevas integraciones. En los planes Pro y Enterprise, los cambios menores están incluidos.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="6">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Cómo es el soporte?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Soporte por email en todos los planes, y soporte prioritario por WhatsApp en Pro y Enterprise, con un manager de cuenta dedicado en este último.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="1">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Cuánto cuesta?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Desde 149€/mes en el plan Start. Puedes ver el detalle completo de cada plan en la sección de <a href="#precios" style="color: var(--accent-cyan);">precios</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-reveal data-reveal-delay="2">
+            <button class="faq-item__question" aria-expanded="false">
+              ¿Hay permanencia?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>No hay permanencia obligatoria en los planes Start y Pro. Puedes cancelar cuando quieras. El plan Enterprise se negocia según el acuerdo específico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CIERRE EMOCIONAL
+         ========================================================================== -->
+    <section aria-label="Empieza hoy">
+      <div class="container">
+        <div class="closing" data-reveal>
+          <p class="eyebrow closing__eyebrow">Empieza hoy</p>
+          <h2 class="heading-xl closing__title">
+            Mientras lees esto, tu competencia<br class="hide-mobile">ya responde en automático.
+          </h2>
+          <p class="closing__lead">
+            Cada mensaje sin responder es un cliente que se va. <strong>Deja que tu primer empleado de IA empiece a trabajar por ti las 24 horas del día</strong> — hoy mismo.
+          </p>
+          <div class="closing__actions">
+            <a href="#contacto" class="btn btn--primary btn--lg" data-magnetic>
+              Quiero mi agente IA
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://wa.me/34674555240" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">
+              Hablar por WhatsApp
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 6.6a2.6 2.6 0 012.6-2.6h7.8a2.6 2.6 0 012.6 2.6v3.3a2.6 2.6 0 01-2.6 2.6H8l-3.3 2.6v-2.6h-1a2.6 2.6 0 01-2.6-2.6V6.6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <div class="closing__reassurance">
+            <span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sin permanencia</span>
+            <span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Implementación rápida</span>
+            <span><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Respuesta en menos de 24 h</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ==========================================================================
+         CTA FINAL + FORMULARIO DE CONTACTO
+         ========================================================================== -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <div class="cta-final" data-reveal>
+          <div class="cta-final__intro">
+            <h2 id="contacto-title" class="heading-lg">
+              Solicita tu demo gratuita.
+            </h2>
+            <p class="body-lg" style="margin-top: var(--space-4);">
+              Cuéntanos sobre tu negocio y te mostramos, en una demo personalizada, cómo quedaría tu primer agente IA funcionando.
+            </p>
+            <div class="cta-final__actions">
+              <a href="#contacto-form" class="btn btn--primary btn--lg" data-magnetic>
+                Solicitar Demo gratuita
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="https://wa.me/34600000000" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">
+                Hablar por WhatsApp
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 6.6a2.6 2.6 0 012.6-2.6h7.8a2.6 2.6 0 012.6 2.6v3.3a2.6 2.6 0 01-2.6 2.6H8l-3.3 2.6v-2.6h-1a2.6 2.6 0 01-2.6-2.6V6.6z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="formName">Nombre</label>
+                <input type="text" id="formName" name="name" required autocomplete="name">
+                <span class="contact-form__error" data-error-for="formName"></span>
+              </div>
+              <div class="contact-form__field">
+                <label for="formCompany">Empresa</label>
+                <input type="text" id="formCompany" name="company" required autocomplete="organization">
+                <span class="contact-form__error" data-error-for="formCompany"></span>
+              </div>
+            </div>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="formEmail">Email</label>
+                <input type="email" id="formEmail" name="email" required autocomplete="email">
+                <span class="contact-form__error" data-error-for="formEmail"></span>
+              </div>
+              <div class="contact-form__field">
+                <label for="formPhone">Teléfono</label>
+                <input type="tel" id="formPhone" name="phone" required autocomplete="tel">
+                <span class="contact-form__error" data-error-for="formPhone"></span>
+              </div>
+            </div>
+            <div class="contact-form__row">
+              <div class="contact-form__field">
+                <label for="formSector">Sector</label>
+                <select id="formSector" name="sector" required>
+                  <option value="" disabled selected>Selecciona tu sector</option>
+                  <option>Restaurantes</option>
+                  <option>Barberías / Peluquerías</option>
+                  <option>Clínicas / Estética</option>
+                  <option>Dentistas</option>
+                  <option>Abogados</option>
+                  <option>Inmobiliarias</option>
+                  <option>Hoteles</option>
+                  <option>Academias</option>
+                  <option>Centros deportivos</option>
+                  <option>Tiendas / E-commerce</option>
+                  <option>Otro</option>
+                </select>
+                <span class="contact-form__error" data-error-for="formSector"></span>
+              </div>
+              <div class="contact-form__field">
+                <label for="formSize">Número de empleados</label>
+                <select id="formSize" name="size" required>
+                  <option value="" disabled selected>Selecciona un rango</option>
+                  <option>1-5</option>
+                  <option>6-15</option>
+                  <option>16-50</option>
+                  <option>51-200</option>
+                  <option>+200</option>
+                </select>
+                <span class="contact-form__error" data-error-for="formSize"></span>
+              </div>
+            </div>
+            <div class="contact-form__field">
+              <label for="formMessage">Mensaje</label>
+              <textarea id="formMessage" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block btn--lg" id="contactSubmit">
+              Quiero automatizar mi empresa
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="navbar__logo">
+            <img class="navbar__logo-img" src="assets/images/elyon-logo.png" alt="ELYON" width="688" height="120" loading="lazy">
+          </a>
+          <p class="body-base" style="margin-top: var(--space-4); max-width: 280px;">
+            Empleados de inteligencia artificial que automatizan tu empresa, 24 horas al día.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/nexora-ai" class="footer__social-link" target="_blank" rel="noopener" aria-label="ELYON en LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/nexora.ai" class="footer__social-link" target="_blank" rel="noopener" aria-label="ELYON en Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.9 5.9 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 00-1.38-2.13A5.9 5.9 0 0019.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+            </a>
+            <a href="https://x.com/nexora_ai" class="footer__social-link" target="_blank" rel="noopener" aria-label="ELYON en X">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93zm-1.29 19.5h2.04L6.48 3.24H4.29L17.61 20.65z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Empresa</p>
+          <a href="#" class="footer__link">Nosotros</a>
+          <a href="#" class="footer__link">Blog</a>
+          <a href="#" class="footer__link">Carreras</a>
+          <a href="#contacto" class="footer__link">Contacto</a>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Soluciones</p>
+          <a href="#agentes" class="footer__link">Agentes IA</a>
+          <a href="#soluciones" class="footer__link">Automatizaciones</a>
+          <a href="#integraciones" class="footer__link">Integraciones</a>
+          <a href="#" class="footer__link">API</a>
+          <a href="#precios" class="footer__link">Precios</a>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title">Legal</p>
+          <a href="#" class="footer__link">Privacidad</a>
+          <a href="#" class="footer__link">Cookies</a>
+          <a href="#" class="footer__link">Términos</a>
+          <a href="#" class="footer__link">RGPD</a>
+        </div>
+
+        <div class="footer__col footer__col--contact">
+          <p class="footer__col-title">Contacto</p>
+          <ul class="footer__contact">
+            <li class="footer__contact-item">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 10.83a2.08 2.08 0 100-4.16 2.08 2.08 0 000 4.16z" stroke="currentColor" stroke-width="1.3"/><path d="M10 18.33s6.25-4.16 6.25-9.16a6.25 6.25 0 10-12.5 0c0 5 6.25 9.16 6.25 9.16z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              <span>España</span>
+            </li>
+            <li class="footer__contact-item">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4.16" width="15" height="11.66" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M3.33 5l6.67 5 6.67-5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="mailto:nexorasolutionsai@hotmail.com">nexorasolutionsai@hotmail.com</a>
+            </li>
+            <li class="footer__contact-item">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M17.5 14.1v2.5a1.67 1.67 0 01-1.82 1.67 16.5 16.5 0 01-7.2-2.56 16.25 16.25 0 01-5-5A16.5 16.5 0 01.92 3.48 1.67 1.67 0 012.58 1.66h2.5a1.67 1.67 0 011.67 1.43c.1.8.3 1.58.57 2.32a1.67 1.67 0 01-.37 1.76l-1.06 1.06a13.33 13.33 0 005 5l1.06-1.06a1.67 1.67 0 011.76-.37c.74.28 1.52.47 2.32.57a1.67 1.67 0 011.44 1.7z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              <a href="tel:+34674555240">+34 674 555 240</a>
+            </li>
+            <li class="footer__contact-item footer__contact-item--badge">
+              <span class="footer__response"><span class="footer__response-dot"></span>Respuesta en menos de 24 horas</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="footerYear">2024</span> ELYON AI. Todos los derechos reservados.</p>
+        <p class="mono-label">Hecho con IA por ELYON.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ==========================================================================
+     WIDGETS FLOTANTES — WhatsApp + Chat IA
+     ========================================================================== -->
+<a href="https://wa.me/34600000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp" id="whatsappFloat">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 21l1.4-4.2A8.5 8.5 0 1112 20.5c-1.5 0-2.9-.4-4.2-1.1L4 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8.5 9.5c0 4 3 6.8 6.8 6.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+</a>
+
+<div class="ai-chat-widget" id="aiChatWidget">
+  <button class="ai-chat-widget__toggle" id="aiChatToggle" aria-label="Abrir chat con un agente ELYON" aria-expanded="false">
+    <svg class="ai-chat-widget__icon-open" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.4"/><circle cx="9" cy="11" r="1.1" fill="currentColor"/><circle cx="15" cy="11" r="1.1" fill="currentColor"/><path d="M8.5 14.5c1 .8 2.2 1.2 3.5 1.2s2.5-.4 3.5-1.2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+    <svg class="ai-chat-widget__icon-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+
+  <div class="ai-chat-panel" id="aiChatPanel">
+    <div class="ai-chat-panel__header">
+      <span class="agent-card__avatar agent-card__avatar--violet" style="width:34px;height:34px;font-size:0.9rem;">N</span>
+      <div>
+        <p class="ai-chat-panel__title">Agente ELYON</p>
+        <p class="ai-chat-panel__status"><span></span> En línea</p>
+      </div>
+    </div>
+    <div class="ai-chat-panel__body">
+      <div class="chat-msg chat-msg--in">
+        <div class="chat-msg__bubble">¡Hola! Soy el agente de ELYON. ¿Quieres ver cómo un agente IA podría atender a tus clientes?</div>
+      </div>
+      <div class="chat-msg chat-msg--out">
+        <div class="chat-msg__bubble">Sí, cuéntame más</div>
+      </div>
+      <div class="chat-msg chat-msg--in">
+        <div class="chat-msg__bubble">Perfecto. Esta demo es solo una muestra — para conectar tu agente real, completa el formulario y te contactamos hoy mismo.</div>
+      </div>
+    </div>
+    <a href="#contacto" class="btn btn--primary btn--block btn--sm" style="margin: var(--space-4);">Solicitar Demo real</a>
+  </div>
+</div>
+
+<!-- Toast de confirmación del formulario -->
+<div class="toast" id="formToast" role="status" aria-live="polite">
+  <span class="toast__icon">✓</span>
+  <div>
+    <p class="toast__title">Solicitud enviada</p>
+    <p class="toast__text">Te contactaremos en menos de 24 horas.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r158/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/postprocessing/EffectComposer.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/postprocessing/RenderPass.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/postprocessing/ShaderPass.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/postprocessing/UnrealBloomPass.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/shaders/CopyShader.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/examples/js/shaders/LuminosityHighPassShader.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/cursor.js" defer></script>
+<script src="js/three-scene.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/interactions.js" defer></script>
+<script src="js/stats.js" defer></script>
+<script src="js/demo.js" defer></script>
+<script src="js/whatsapp-demo.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

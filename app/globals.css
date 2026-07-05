@@ -1,0 +1,306 @@
+/* ============================================================
+   ELYON — globals.css
+   Reset compacto + tokens de marca (heredados de la landing) +
+   aurora de fondo. Los estilos de componentes llegan con sus módulos.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: none; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+
+/* ==== Tokens de marca ELYON (heredados de la landing) ==== */
+/* ==========================================================================
+   ELYON AI — Design Tokens
+   Única fuente de verdad. Ningún color, fuente o radio se hardcodea
+   en otro archivo: todo se referencia desde aquí.
+   ========================================================================== */
+
+:root {
+  /* ---- Color: superficies ---- */
+  --bg-primary: #050505;
+  --bg-secondary: #0D0D0D;
+  --bg-tertiary: #111111;
+  --bg-elevated: #161616;
+
+  /* ---- Color: texto ---- */
+  --text-primary: #FFFFFF;
+  --text-secondary: #B7B7B7;
+  --text-tertiary: #6E6E6E;
+  --text-disabled: #444444;
+
+  /* ---- Color: acento ---- */
+  --accent-violet: #7C5CFF;
+  --accent-violet-rgb: 124, 92, 255;
+  --accent-glow: #8B5CF6;
+  --accent-glow-rgb: 139, 92, 246;
+  --accent-cyan: #00D4FF;
+  --accent-cyan-rgb: 0, 212, 255;
+
+  /* ---- Color: estado ---- */
+  --color-success: #2ECC71;
+  --color-success-rgb: 46, 204, 113;
+  --color-warning: #F5A623;
+  --color-warning-rgb: 245, 166, 35;
+  --color-danger: #FF5C5C;
+  --color-danger-rgb: 255, 92, 92;
+
+  /* ---- Gradientes ---- */
+  --gradient-primary: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-glow) 50%, var(--accent-cyan) 100%);
+  --gradient-text: linear-gradient(135deg, #FFFFFF 0%, #C9BFFF 50%, var(--accent-cyan) 100%);
+  --gradient-violet-cyan: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  --gradient-radial-glow: radial-gradient(circle, rgba(var(--accent-glow-rgb), 0.25) 0%, transparent 70%);
+  --gradient-border: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 100%);
+
+  /* ---- Superficies de cristal ---- */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(var(--accent-violet-rgb), 0.4);
+  --glass-blur: 20px;
+
+  /* ---- Tipografía: familias ---- */
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+
+  /* ---- Tipografía: escala fluida (clamp: mínimo, preferido, máximo) ---- */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.32vw, 1.25rem);
+  --text-xl: clamp(1.375rem, 1.27rem + 0.53vw, 1.625rem);
+  --text-2xl: clamp(1.75rem, 1.56rem + 0.92vw, 2.25rem);
+  --text-3xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+  --text-4xl: clamp(2.75rem, 2.2rem + 2.75vw, 4.25rem);
+  --text-5xl: clamp(3.25rem, 2.4rem + 4.25vw, 5.5rem);
+  --text-hero: clamp(3.5rem, 2.2rem + 6.5vw, 7.25rem);
+
+  /* ---- Tipografía: peso ---- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Tipografía: tracking ---- */
+  --tracking-tight: -0.04em;
+  --tracking-snug: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.12em;
+
+  /* ---- Tipografía: interlineado ---- */
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  /* ---- Espaciado (escala base-8 con un paso fluido para ritmo de sección) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-padding: clamp(5rem, 4rem + 4vw, 9rem);
+  --container-padding: clamp(1.25rem, 1rem + 2vw, 3rem);
+
+  /* ---- Layout ---- */
+  --container-max: 1320px;
+  --container-narrow: 860px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* ---- Elevación ---- */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-glow-violet: 0 0 40px rgba(var(--accent-violet-rgb), 0.25);
+  --shadow-glow-cyan: 0 0 40px rgba(var(--accent-cyan-rgb), 0.2);
+
+  /* ---- Movimiento ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --duration-fast: 0.2s;
+  --duration-base: 0.4s;
+  --duration-slow: 0.7s;
+  --duration-slowest: 1.2s;
+
+  /* ---- Z-index: escala con nombre, evita guerra de números ---- */
+  --z-background: 0;
+  --z-base: 1;
+  --z-elevated: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-cursor: 600;
+
+  /* ---- Layout shell (alto del nav, usado por scroll-padding etc.) ---- */
+  --nav-height: 84px;
+  --nav-height-scrolled: 64px;
+}
+
+/* Resplandor de fondo animado — firma visual ELYON (D9), coste GPU nulo */
+.bg-aurora {
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 45% 40% at 30% 25%, rgba(124, 92, 255, 0.18), transparent 60%),
+    radial-gradient(ellipse 40% 38% at 72% 68%, rgba(0, 212, 255, 0.12), transparent 60%);
+  filter: blur(30px);
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift {
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1); opacity: 0.85; }
+  100% { transform: translate3d(4%, 3%, 0) scale(1.12); opacity: 0.95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-aurora { animation: none; }
+}
+
+/* ============================================================
+   Módulo 1 · Entrega 1A — Pantalla de login
+   ============================================================ */
+
+.login-screen {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6, 24px);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: clamp(28px, 5vw, 44px);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo-img {
+  height: clamp(44px, 10vw, 64px);
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.login-tagline {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary, rgba(255,255,255,0.6));
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-field label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-secondary, rgba(255,255,255,0.7));
+}
+
+.login-field input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+.login-field input:focus {
+  border-color: rgba(124, 92, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.15);
+}
+
+.login-error {
+  font-size: 0.85rem;
+  color: #FF6B6B;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-button {
+  margin-top: 4px;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #7C5CFF, #00D4FF);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.login-button:hover { opacity: 0.92; }
+.login-button:active { transform: scale(0.99); }
+.login-button:disabled { opacity: 0.6; cursor: default; }
+
+.login-forgot {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary, rgba(255,255,255,0.55));
+  margin-top: 4px;
+  transition: color 0.2s;
+}
+
+.login-forgot:hover { color: #00D4FF; }
