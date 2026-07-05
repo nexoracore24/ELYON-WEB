@@ -297,7 +297,12 @@
 
 .navbar__inner {
   width: 100%;
-  max-width: var(--container-max);
+  /* El nav completo (logo + 9 enlaces + acciones) necesita ~1490px de
+     contenido en una sola línea; --container-max (1320px, pensado para
+     las secciones de contenido) lo comprimía y forzaba el logo/los
+     botones a desbordar. El navbar usa su propio máximo, más ancho,
+     solo para sí mismo. */
+  max-width: 1650px;
   margin-inline: auto;
   padding-inline: var(--container-padding);
   display: flex;
@@ -314,6 +319,7 @@
   font-size: var(--text-lg);
   font-weight: var(--weight-semibold);
   letter-spacing: var(--tracking-snug);
+  flex-shrink: 0;
 }
 
 .navbar__logo-mark {
@@ -349,6 +355,7 @@
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
   transition: color var(--duration-fast) var(--ease-out-quart);
+  white-space: nowrap;
 }
 
 .navbar__link:hover {
@@ -404,7 +411,7 @@
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1650px) {
   .navbar__links {
     display: none;
   }
