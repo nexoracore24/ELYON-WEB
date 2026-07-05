@@ -8,7 +8,9 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Rutas públicas: accesibles sin sesión.
-const PUBLIC_PATHS = ["/login", "/recuperar", "/actualizar-clave"];
+// "/" y "/index.html" son la landing estática (public/index.html, servida
+// vía rewrite en next.config.mjs) y deben ser visibles sin autenticarse.
+const PUBLIC_PATHS = ["/login", "/recuperar", "/actualizar-clave", "/index.html"];
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -58,7 +60,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   const path = request.nextUrl.pathname;
-  const isPublic = PUBLIC_PATHS.some((p) => path.startsWith(p));
+  const isPublic = path === "/" || PUBLIC_PATHS.some((p) => path.startsWith(p));
 
   try {
     // Refresca la sesión (imprescindible para la persistencia).
