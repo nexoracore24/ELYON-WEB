@@ -93,9 +93,19 @@
   /* ============================================================
      Scroll cinemático (solo con GSAP + desktop + sin reduced-motion):
      las cabeceras de sección se desplazan a velocidad ligeramente
-     distinta del scroll, creando profundidad sin marear. Cada tarjeta
-     "flota" un poco al entrar. Es sutil a propósito — el prompt pide
-     "nada brusco".
+     distinta del scroll, creando profundidad sin marear.
+
+     Nota: el "entra elevándose" de tarjetas y del dashboard vivía antes
+     aquí también, vía gsap.from(..., { opacity: 0, ... }) + ScrollTrigger
+     sobre los mismos elementos que ya llevan [data-reveal]. gsap.from()
+     fija opacity/transform inline en cuanto se registra, con más
+     prioridad que la clase .is-visible — si ese ScrollTrigger no llegaba
+     a disparar (recarga a mitad de scroll, carrera con el registro de
+     triggers, etc.), la tarjeta quedaba oculta para siempre, aunque el
+     sistema [data-reveal] + interactions.js ya la hubiera revelado. Como
+     [data-reveal] cubre el mismo efecto (fade + translateY) de forma
+     fiable, se quitó la versión GSAP duplicada en vez de mantener dos
+     sistemas compitiendo por el mismo opacity/transform.
      ============================================================ */
   if (hasGSAP && !prefersReducedMotion && window.innerWidth > 1024) {
     // Parallax suave de las cabeceras centradas.
@@ -115,37 +125,5 @@
         }
       );
     });
-
-    // Profundidad en las tarjetas de agentes y precios: entran elevándose.
-    gsap.utils.toArray('.agent-card, .pricing-card, .testimonial-card').forEach((card, i) => {
-      gsap.from(card, {
-        y: 60,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 88%',
-          toggleActions: 'play none none none',
-        },
-        delay: (i % 3) * 0.08,
-      });
-    });
-
-    // El núcleo del dashboard del producto se "asienta" al entrar.
-    const productDash = document.querySelector('.product-dash');
-    if (productDash) {
-      gsap.from(productDash, {
-        scale: 0.96,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: productDash,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
-      });
-    }
   }
 })();
