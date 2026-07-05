@@ -61,6 +61,13 @@
 
   /* ============================================================
      Scroll reveal — elementos con [data-reveal]
+     threshold 0 + sin rootMargin negativo: el observer dispara en
+     cuanto aparece 1px del elemento, para no perder la transición
+     en scrolls muy rápidos (flick de trackpad, PgDn). Como red de
+     seguridad adicional, un chequeo manual por rAF revela cualquier
+     elemento que ya haya pasado por el viewport y que, por lo que
+     sea (scroll muy rápido, tab en segundo plano, etc.), el
+     observer no haya llegado a marcar.
      ============================================================ */
   const revealEls = document.querySelectorAll('[data-reveal]');
   if (revealEls.length) {
@@ -73,9 +80,34 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+      { threshold: 0, rootMargin: '0px' }
     );
     revealEls.forEach((el) => revealObserver.observe(el));
+
+    let pending = Array.from(revealEls);
+    let catchUpTicking = false;
+    const catchUpPass = () => {
+      catchUpTicking = false;
+      pending = pending.filter((el) => {
+        if (el.classList.contains('is-visible')) return false;
+        const rect = el.getBoundingClientRect();
+        // Ya cruzó por completo la ventana visible sin activarse: revélalo.
+        if (rect.bottom < 0 || rect.top < window.innerHeight) {
+          el.classList.add('is-visible');
+          revealObserver.unobserve(el);
+          return false;
+        }
+        return true;
+      });
+    };
+    const scheduleCatchUp = () => {
+      if (!catchUpTicking && pending.length) {
+        catchUpTicking = true;
+        requestAnimationFrame(catchUpPass);
+      }
+    };
+    window.addEventListener('scroll', scheduleCatchUp, { passive: true });
+    window.addEventListener('resize', scheduleCatchUp);
   }
 
   /* ============================================================
