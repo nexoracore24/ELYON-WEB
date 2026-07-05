@@ -16,7 +16,7 @@ export default function DashboardHeader({ fullName, businessName }: Props) {
   const today = longDateInSpanish();
 
   // El nombre puede venir como "Roberto (Administrador)": usamos solo el nombre.
-  const firstName = fullName.split(" ")[0].split("(")[0].trim() || fullName;
+  const firstName = (fullName.split(" ")[0] ?? "").split("(")[0]?.trim() || fullName;
 
   return (
     <header className="dash-header">
