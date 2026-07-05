@@ -13,10 +13,28 @@ const PUBLIC_PATHS = ["/login", "/recuperar", "/actualizar-clave"];
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  // El matcher cubre casi todas las rutas del sitio (públicas incluidas):
+  // si faltan las variables de entorno, no debemos tumbar el sitio entero
+  // con un 500 en cada petición, solo registrar el problema y continuar.
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error(
+      "[middleware] Faltan variables de entorno de Supabase: " +
+        [
+          !supabaseUrl && "NEXT_PUBLIC_SUPABASE_URL",
+          !supabaseAnonKey && "NEXT_PUBLIC_SUPABASE_ANON_KEY",
+        ]
+          .filter(Boolean)
+          .join(", ")
+    );
+    return response;
+  }
+
+  let supabase;
+  try {
+    supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
       cookies: {
         getAll() {
           return request.cookies.getAll();
@@ -33,22 +51,29 @@ export async function updateSession(request: NextRequest) {
           );
         },
       },
-    }
-  );
-
-  // Refresca la sesión (imprescindible para la persistencia).
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+    });
+  } catch (error) {
+    console.error("[middleware] No se pudo inicializar el cliente de Supabase:", error);
+    return response;
+  }
 
   const path = request.nextUrl.pathname;
   const isPublic = PUBLIC_PATHS.some((p) => path.startsWith(p));
 
-  // Sin sesión e intentando entrar a zona privada -> al login.
-  if (!user && !isPublic) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/login";
-    return NextResponse.redirect(url);
+  try {
+    // Refresca la sesión (imprescindible para la persistencia).
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    // Sin sesión e intentando entrar a zona privada -> al login.
+    if (!user && !isPublic) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/login";
+      return NextResponse.redirect(url);
+    }
+  } catch (error) {
+    console.error("[middleware] Fallo al validar la sesión de Supabase:", error);
   }
 
   return response;
