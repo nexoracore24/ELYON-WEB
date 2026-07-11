@@ -1706,6 +1706,13 @@
   color: var(--text-tertiary);
 }
 
+/* Aviso de instalación aparte (pago único, presupuestado por negocio) */
+.pricing-card__setup-note {
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  margin-top: var(--space-1);
+}
+
 .pricing-card__features {
   display: flex;
   flex-direction: column;
